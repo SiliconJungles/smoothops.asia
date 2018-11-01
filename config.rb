@@ -14,6 +14,17 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 page '/*.html', layout: false
 
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+  deploy.remote = 'git@github.com:SiliconJungles/smoothops.asia.git'
+  deploy.build_before = true
+  # Optional Settings
+  # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
+  # deploy.branch   = 'custom-branch' # default: gh-pages
+  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+end
+
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
